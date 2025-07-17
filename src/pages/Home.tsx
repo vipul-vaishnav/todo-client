@@ -1,7 +1,7 @@
 import TaskSheet from '@/components/Home/task-sheet'
 import Sidebar from '@/components/Home/Sidebar'
 import Filter from '@/components/shared/Filter'
-import Sort from '@/components/shared/sort'
+import Sort from '@/components/shared/Sort'
 import Task from '@/components/shared/Task'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react'
