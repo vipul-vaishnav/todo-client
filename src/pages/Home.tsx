@@ -62,7 +62,7 @@ const Home: React.FC = () => {
           </div>
           {notes.length === 0 ? (
             <div className="flex flex-col items-center justify-center">
-              <img src="/public/void.svg" alt="empty" className="block w-[264px] mx-auto" />
+              <img src="/void.svg" alt="empty" className="block w-[264px] mx-auto" />
 
               <div className="text-center mt-8">
                 <h6 className="font-bold text-xl mb-4">🗒️ Looks like there’s nothing to show</h6>
