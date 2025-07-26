@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'motion/react' // ← fix: use framer-motion instead of motion/react
+import { motion } from 'motion/react'
 import { ModeToggle } from '../mode-toggle'
 import { Separator } from '../ui/separator'
 import { Archive, BookmarkCheck, Info, LayoutDashboard, Moon, Sun } from 'lucide-react'
@@ -26,7 +26,7 @@ const Sidebar: React.FC<SidebarProps> = ({ open }) => {
       }}
     >
       <aside
-        className="w-full border-r transition-all duration-300 ease-in-out flex flex-col justify-between h-full overflow-y-auto overflow-x-hidden"
+        className="w-full border-r transition-all duration-350 ease-in-out flex flex-col justify-between h-full overflow-y-auto overflow-x-hidden"
         style={{
           paddingInline: open ? 24 : 8,
           paddingBlock: 24,

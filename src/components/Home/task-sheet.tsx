@@ -22,7 +22,7 @@ import { ChevronDownIcon, Edit, Plus } from 'lucide-react'
 import { Label } from '../ui/label'
 import { Input } from '../ui/input'
 import { Popover, PopoverContent, PopoverTrigger } from '@radix-ui/react-popover'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Calendar } from '../ui/calendar'
 
 type SheetProps = {
@@ -33,6 +33,12 @@ const AddNewTaskSheet: React.FC<SheetProps> = (props) => {
   const { mode } = props
   const [open, setOpen] = useState(false)
   const [date, setDate] = useState<Date | undefined>(undefined)
+  const [title, setTitle] = useState('')
+  const [desc, setDesc] = useState('')
+  const [priority, setPriority] = useState('')
+
+  useEffect(() => {}, [])
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -58,13 +64,13 @@ const AddNewTaskSheet: React.FC<SheetProps> = (props) => {
         <div className="grid flex-1 auto-rows-min gap-6 px-4">
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-name">Title</Label>
-            <Input id="sheet-demo-name" defaultValue="Pedro Duarte" />
+            <Input value={title} onChange={(e) => setTitle(e.target.value)} id="sheet-demo-name" />
           </div>
           <div className="grid gap-3">
             <Label htmlFor="sheet-demo-username">Description</Label>
-            <Input id="sheet-demo-username" defaultValue="@peduarte" />
+            <Input value={desc} onChange={(e) => setDesc(e.target.value)} id="sheet-demo-username" />
           </div>
-          <Select>
+          <Select value={priority} onValueChange={(x) => setPriority(x)}>
             <Label htmlFor="priority" className="px-1">
               Priority
             </Label>
@@ -74,11 +80,11 @@ const AddNewTaskSheet: React.FC<SheetProps> = (props) => {
             <SelectContent id="priority">
               <SelectGroup>
                 <SelectLabel>Priorities</SelectLabel>
-                <SelectItem value="apple">Low</SelectItem>
-                <SelectItem value="banana">Medium</SelectItem>
-                <SelectItem value="blueberry">High</SelectItem>
-                <SelectItem value="grapes">Critical</SelectItem>
-                {mode === 'edit' && <SelectItem value="pineapple">Blocked</SelectItem>}
+                <SelectItem value="low">Low</SelectItem>
+                <SelectItem value="medium">Medium</SelectItem>
+                <SelectItem value="high">High</SelectItem>
+                <SelectItem value="critical">Critical</SelectItem>
+                {mode === 'edit' && <SelectItem value="blocked">Blocked</SelectItem>}
               </SelectGroup>
             </SelectContent>
           </Select>

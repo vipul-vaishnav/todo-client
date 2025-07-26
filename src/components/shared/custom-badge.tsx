@@ -1,7 +1,7 @@
 import React from 'react'
 import { Badge } from '../ui/badge'
 
-type CustomBadgeProps = {
+export type CustomBadgeProps = {
   priority: 'critical' | 'blocked' | 'high' | 'medium' | 'low'
 }
 
